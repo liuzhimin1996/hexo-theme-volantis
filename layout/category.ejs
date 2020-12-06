@@ -5,7 +5,9 @@
     <% if (page.layout == 'category') { %>
       <div class='post-wrapper'>
         <article id="cat" class="post article white-box reveal <%- theme.custom_css.body.effect.join(' ') %>">
-          <h2><%- page.title %></h2>
+		  <% if (page.title) { %>
+			<h2><%- page.title %></h2>
+		  <% } %>
           <div class="all-cats">
             <% if (site.categories.length){ %>
               <% site.categories.sort('path').each(function(category){ %>

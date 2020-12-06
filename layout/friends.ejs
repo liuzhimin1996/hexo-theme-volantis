@@ -1,18 +1,9 @@
 <%- partial('_pre') %>
 <div class='l_main<%- page.sidebar == false ? ' no_sidebar' : '' %>'>
   <article id="<%= page.layout %>" class="md post article article-entry l_friends white-box reveal <%- theme.custom_css.body.effect.join(' ') %> article-type-<%= page.layout %>" itemscope itemprop="blogPost">
-    <%- partial('_partial/meta',{post: page, position: 'top'}) %>
-    <%- page.excerpt %>
     <% if (site.data.friends){ %>
       <% site.data.friends.forEach((group, i) => { %>
         <div class='friends-group'>
-          <br>
-          <h2 class='friend-header'>
-            <%- group.group %>
-          </h2>
-          <% if (group.description) { %>
-            <%- markdown(group.description) %>
-          <%} %>
           <% if (theme.pages.friends.layout_scheme == 'sites') { %>
             <div class='site-card-group'>
               <% (group.items||[]).forEach(function(item){ %>
